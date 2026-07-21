@@ -1,0 +1,1561 @@
+@import url('https://fonts.googleapis.com/css2?family=Montez&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montez&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quando&family=Special+Gothic+Expanded+One&display=swap');
+
+
+html, body{
+    margin: 0;
+}
+    
+
+.page{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#homePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('assets/background-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#header-text{
+  color: #acb3b493;
+  font-size: 96px;
+  font-style: normal;
+  margin-top: 1.2em;
+  text-align: center;
+  font-family: "Montserrat",sans-serif;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.interaction-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+#button-text{
+    font-style: regular;
+    font-size: 64px;
+    font-family: montez;
+    color: #acb3b480;
+    text-align: center;
+    margin: 0;
+}
+
+
+#glass-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15em;
+    height: 4em;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 4px 2px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#glass-card:hover{
+    scale: 1.05;
+    transition: all 0.5s;
+}
+
+#glass-card p{
+    font-size: 20px;
+    font-style: normal;
+    font-family: inter;
+    color: #ffffffa6;
+
+}
+
+#glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+#glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+.nav-logo{
+    scale: 0.9;
+    position: absolute;
+    top:0;
+    left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background-color: none  ;
+    top:0;
+    left: 0;
+    z-index: 999;
+}
+
+nav.events-nav-bg .nav-links a,
+nav.events-nav-bg .nav-links ul {
+    color: #000000 !important; /* Turns both your anchor text links and list text black */
+}
+
+.nav-links ul{
+    padding-top: 0.5em;
+    list-style: none;
+    font-family: Inter;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    color: rgba(255, 255, 255, 0.568);
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.568);
+}
+
+.nav-links li{
+    padding: 1em;
+    border-radius: 100px;
+}
+
+.nav-links li:hover{
+    background-color: rgba(255, 255, 255, 0.13);
+    scale: 1.2;
+    transition: all 0.5s;
+}
+
+.nav-logo:hover{
+    scale: 0.8;
+    transition: all 0.5s;
+}
+
+#album-page{
+    background-color: #0c0c0b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+
+}
+
+#album-page p{
+    font-size: 40px;
+    font-family: montez;
+    color: white;
+    text-align: center;
+    padding-right: 80px;
+}
+
+.album-text{
+    color: white;
+    text-align: center;
+    font-size: 64px;
+    font-family: montserrat;
+    font-style: normal;
+}
+
+.album-wrapper{
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    top: 40px;
+    margin-left: 15vw;
+    background-color: none;
+    width:100%;
+    height: clamp(200px,20vw,350px);
+    justify-content: center;
+}
+
+.album-box{
+    transition: all 0.3s;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    border-radius: 50px;
+    position: relative;
+    min-width: 70px;
+    height: 100%;
+     background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+ justify-content: center;
+}
+
+.album-box:hover{
+    z-index: 999;
+    scale: 1.1;
+    transition: all 0.5s;
+}
+
+.album-button{
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+}
+
+.album-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.album-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+
+.album-box:hover .album-button {
+    display: block;
+}
+
+.album-box button{
+    width: 40%;
+    height: 2.5em;
+    align-self: center;
+}
+
+.rotateUp{
+    transform: translateY(10px) rotate(-10deg);
+}
+/* #box1{
+    background-color: red;
+    transform: translateY(50px) rotate(-25deg);
+}
+
+
+#box2{
+    background-color: blue;
+    transform: translateX(-70px) rotate(-10deg);
+} */
+
+.album-box img{
+    padding-bottom: 30px;
+    object-fit: contain;
+    width: 90%;
+    height: auto;
+}
+
+.glass-card {
+  width: 240px;
+  height: 360px;
+ 
+}
+
+
+
+
+.album-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.album-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+#event-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.folders{
+    width: 100%;
+    height: clamp(10em, 20vw, 12em);
+    position: relative;
+    transition: all 0.8s;
+    z-index: 2;
+}
+
+.folder{
+    position: relative;
+    filter: drop-shadow(0px -15px 8px rgba(0, 0, 0, 0.39));
+    width: 100%;
+    height: auto;
+}
+
+#folder-pic{
+    position: absolute;
+    top: 7em;
+    left: 3em;
+    width: 95%;
+    height: auto;
+}
+
+#folder-text1{
+    margin: 0;
+    width: 100%;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    position: absolute;
+    top: 0.5vw;
+    left: 21%;
+    color: #C9C9C9;
+    font-size: 1.5vw;
+    font-family: inter;
+}
+
+#folder-text2{
+    margin: 0;
+    width: 100%;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    position: absolute;
+    top: 0.5vw;
+    left: 10%;
+    color: #414040;
+    font-size: 1.3vw;
+    font-family: quando;
+}
+
+#folder-text3{
+    margin: 0;
+    width: 100%;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    position: absolute;
+    top: 1.5vw;
+    left: 24%;
+    color: #d3d3d3;
+    font-size: 1.3vw;
+    font-family: quando;
+}
+#folder-text4{
+    margin: 0;
+    width: 100%;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    position: absolute;
+    top: 1.5vw;
+    left: 17%;
+    color: #d3d3d3;
+    font-size: 1.3vw;
+    font-family: quando;
+}
+
+
+
+#folder-heading1{
+    margin: 0;
+    font-size: clamp(50px, 5vw, 100px);
+    font-weight: 500;
+   position: absolute;
+   top: 3.5vw;
+   left: 5vw;
+   color: #e8db79e1;
+   font-family: Inter;
+}
+
+#folder-heading2{
+    margin: 0;
+    font-size: clamp(50px, 5vw, 100px);
+    font-weight: 500;
+   position: absolute;
+   bottom: -6.5em;
+   left: 5vw;
+   color: #e7e7e7e1;
+   font-family: Inter;
+   z-index: 1;
+}
+
+#folder-heading4{
+    margin: 0;
+    font-size: clamp(50px, 5vw, 100px);
+    font-weight: 500;
+   position: absolute;
+   bottom: -6.5em;
+   right: 5vw;
+   color: #e7e7e7e1;
+   font-family: Inter;
+   z-index: 1;
+   letter-spacing: 10px;
+}
+
+#folder-pic3{
+    position: absolute;
+    top: 7em;
+    left: 3em;
+    width: 95%;
+    height: auto;
+}
+
+#folder-pic4{
+    position: absolute;
+    top: 8em;
+    left: 3em;
+    width: 95%;
+    height: auto;
+}
+
+#date1{
+    color: #C9C9C9;
+    font-size: 20px;
+    font-family: inter;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 5.5em;
+    margin: 0;
+    right: 0;
+}
+
+/* #concert1{
+    transform: translateY(-35vw);
+    transition: all 0.5s;
+}
+
+#concert2{
+    transform: translateY(-25vw);
+    transition: all 0.5s;
+    z-index: 999;
+} */
+/* 
+.folders.concert1{
+     transform: translateY(-35vw);
+    transition: all 0.5s;
+} */
+
+/* --- INITIAL STATES (When the page first loads) --- */
+
+
+/* --- CLICKED STATES (When JavaScript applies the classes) --- */
+/* CHANGE: Set these to a positive position so the folder actually slides down */
+.folders.concert1 { transform: translateY(-5vw); transition: all 0.5s; z-index: 999;}
+.folders.concert2 { transform: translateY(-15vw); transition: all 0.5s; z-index: 999;}
+.folders.concert3 { transform: translateY(-25vw); transition: all 0.5s; z-index: 999;}
+.folders.concert4 { transform: translateY(-35vw); transition: all 0.5s; }
+
+#concert{
+    font-size: clamp(70px, 5vw, 96px);
+    font-family: special gothic expanded one;
+    position: absolute;
+    top: 0.3em;
+    right: clamp(0.6em,10vw,0.5em);
+}
+
+table {
+    overflow-x: auto;
+    width: clamp(400px, 40vw, 800px);
+    height:clamp(200px, 25vw, 800px);
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: black;
+    position: absolute;
+    top: clamp(12em, 12vw, 20em);
+    left: 7vw;
+    font-family: inter;
+    text-align: start;
+}
+
+td {
+    font-size: clamp(16px, 10vw, 20px); 
+    text-transform: lowercase;
+    /* Remove width properties from classes and use padding instead */
+    padding: 5px 25px; /* 5px top/bottom, 25px left/right creates an equal 50px visual gap */
+}
+
+
+.venue {
+    color: #424242;
+}
+
+        #folder-pic1{
+            width: 30%;
+            height: auto;
+            position: absolute;
+            top: clamp(12em, 10vw, 15em);
+            right: 10vw;
+        }
+
+#danger-table{
+    z-index: 1;
+    position: absolute;
+    top: 250px;
+    color: rgb(221, 221, 221);
+    width: 50vw;
+    height:20vw;
+}
+
+#danger-table th{
+    text-align: start;
+    padding-left: 25px;
+    padding-bottom: 10px
+}
+
+#sweet-table{
+    z-index: 1;
+    position: absolute;
+    top: 12vw;
+    right: 120px;
+    margin: 0;
+    color: rgb(221, 221, 221);
+    width: 700px;
+    height:500px;
+}
+
+#sweet-table table{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    color: rgb(221, 221, 221);
+    width: 100%;
+    height: auto;
+}
+
+#sweet-table th{
+    text-align: start;
+    padding-left: 25px;
+    padding-bottom: 10px
+
+}
+
+#petal-table{
+    z-index: 1;
+    position: absolute;
+    top: 12vw;
+    left: 120px;
+    margin: 0;
+    color: rgb(221, 221, 221);
+    width: 900px;
+    height:700px;
+}
+
+#petal-table table{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    color: rgb(221, 221, 221);
+    width: 100%;
+    height: auto;
+}
+
+#petal-table tr td{
+
+    color: rgb(172, 172, 172);
+
+}
+
+/* ============================================
+   MERCHANDISE SECTION STYLES
+   ============================================ */
+
+#merch-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+
+
+.cart-orders{
+    z-index: 1;
+    border-radius: 20px;
+    top: 170px;
+    right: 27%;
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: #e4e3e3;
+    display: none;
+}
+
+.order-button{
+    background-color: #ffffff;
+}
+
+
+.order-button:hover{
+    background-color: #222222;
+    color: white;
+}
+
+
+.product-action{
+    display: flex;
+    gap: 80px;
+    align-items: end;
+}
+
+.product-action button{
+    border: none;
+    border-radius: 20px;
+}
+
+.merch-category {
+    width: 100%;
+    position: relative;
+}
+
+.merch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+}
+
+#crafts{
+    padding-top: 20px;
+}
+
+.merch-title {
+    font-size: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+.merch-controls {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    width: 200px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+.search-box svg {
+    color: #666;
+    flex-shrink: 0;
+}
+
+.sort-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.sort-btn {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sort-btn:hover {
+    background-color: #333333;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-nav {
+    background: none;
+    border: none;
+    font-size: 48px;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-nav:hover {
+    color: #666666;
+}
+
+.prev-btn {
+    order: -1;
+}
+
+.carousel-wrapper {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.product-carousel {
+    display: flex;
+    gap: 32px;
+    padding: 10px 0;
+    min-width: 100%;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    transition: all 0.3s ease;
+    width: 220px;
+}
+
+.product-item button:hover{
+    scale: 1.1;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.rounded-square {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.product-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+    width: 150px;
+    line-height: 1.3;
+    padding-top: 15px;
+    white-space: nowrap;
+}
+
+.product-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(243, 242, 242);
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+.cart:hover{
+    scale: 1.1;
+    transition: all 0.3s;
+}
+
+    .dropdown-content{
+        width: 110px;
+        display: none;
+        background-color: #cacaca;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        flex-direction: column; 
+        text-decoration: none ;
+        gap: 20px;
+        text-align: center;
+        z-index: 2;
+        border-radius: 15px;
+    }
+
+.dropdown-content a{
+    border-radius: 15px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    font-family: inter;
+}   
+
+.dropdown-content a:hover{
+    background-color: #0c0c0b2d;
+}
+
+/* ============================================
+   RESPONSIVE MEDIA QUERY (BELOW 1400px)
+   ============================================ */
+@media screen and (max-width: 1400px) {
+    
+    /* 1. Hide ONLY the decorative desktop elements */
+    .folder, 
+    [id^="folder-pic"], 
+    [id^="folder-heading"]
+        {
+        display: none !important;
+    }
+
+
+
+    /* 2. Style your main top Concerts Heading Title element */
+    #concert {
+        display: block !important;     /* Force unhide on mobile viewports */
+        position: relative !important;  /* Strip broken desktop absolute vectors */
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        margin: 0 0 20px 0 !important;  /* Clean spatial margin gap below title */
+        text-align: center !important;  /* Centers title matching centered tables */
+        font-family: special gothic expanded one !important; /* Update font stack if needed */
+        font-size: 2.2rem !important;   /* Proportionate clean mobile title scale */
+        font-weight: 700 !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        color: #000000 !important;      /* Changes text fill shade to stark white */
+        width: 100% !important;
+    }
+
+    /* 3. Keep layout page structure wrapper centered */
+    #event-page {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 700px !important;
+        margin: 0 auto !important;
+        padding: 140px 20px 0px 20px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+    }
+    
+    /* Keep all other .folders, table, and slider styles exactly the same below... */
+}
+
+
+    /* 3. Re-purpose folders into sleek slideshow containers */
+    /* 3. Re-purpose folders into sleek slideshow containers */
+    /* 3. Re-purpose folders into sleek slideshow containers with dynamic image backgrounds */
+    .folders {
+        display: none !important; 
+        width: 100% !important;
+        height: auto !important; 
+        transform: none !important; 
+        border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+        border-radius: 16px !important;
+        padding: 30px 25px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        top: auto !important;
+        margin: 0 !important;
+        
+        /* Layout Background Image Engines */
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        
+        /* Smooth Animation Parameters */
+        opacity: 0 !important;
+        transform: translateY(15px) !important;
+        transition: opacity 0.35s ease, transform 0.35s ease !important;
+    }
+
+    /* Active visibility selector with animation target states */
+    .folders.active-slide {
+        display: block !important;
+    }
+    
+    .folders.fade-in-active {
+        opacity: 1 !important;
+        transform: translateY(0px) !important;
+    }
+
+    /* 4. Force a translucent dark mask overlay OVER the background image so text stays legible */
+    .folders::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: rgba(0, 0, 0, 0.75) !important; /* Adjust 0.75 higher if text is hard to see */
+        border-radius: 15px !important;
+        z-index: 1 !important;
+    }
+
+    /* Raise content layers cleanly above the dark background mask overlay */
+    [id^="folder-text"],
+    #danger-table, #sweet-table, #petal-table,
+    .folders table {
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    
+
+
+
+    /* Heading text titles style format setup */
+    [id^="folder-text"] {
+        display: block !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 0 20px 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 1.6rem !important;
+        font-weight: 600 !important;
+        color: #dddddd !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+        padding-bottom: 15px !important;
+    }
+
+    /* 4. Strip desktop absolute table layout wrapper parameters */
+    #danger-table, #sweet-table, #petal-table {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        z-index: auto !important;
+        margin: 0 !important;
+    }
+
+
+
+    /* 5. Force child tabular structures inside grids to scale flat */
+    /* 5. Force child tabular structures to scale cleanly and align perfectly in the center */
+    .folders table,
+    #sweet-table table,
+    #petal-table table{
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        max-width: 600px !important;    /* Prevents tables from stretching too wide on tablets */
+        height: auto !important;
+        margin: 0 auto !important;      /* Core auto rule that handles perfect horizontal alignment */
+        border-collapse: collapse !important;
+        color: #e0e0e0 !important;
+    }
+
+    #danger-table th, tr{
+        color: white !important;
+    }
+
+
+
+    .folders tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+    .folders tr:last-child {
+        border-bottom: none !important;
+    }
+
+    .folders th {
+        text-align: left !important;
+        color: #dbdbdb !important;
+        font-size: 13px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        padding: 0 10px 10px 10px !important;
+    }
+
+    .folders td {
+        font-size: 14px !important;
+        font-family: 'Inter', sans-serif !important;
+        color: #dadada !important;
+        text-transform: none !important; 
+        padding: 12px 10px !important; 
+        text-align: left !important;
+    }
+
+    .folders .venue {
+        color: #999 !important;
+    }
+
+    /* 6. FIXED NAVIGATION BAR INTERFACE CONTROLS */
+    .slider-controls {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 450px !important;
+        margin-top: 30px !important;
+        position: relative !important;
+        z-index: 99999 !important; /* Forces buttons above broken window click streams */
+    }
+
+    .slide-btn {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: #000000 !important;
+        padding: 10px 20px !important;
+        border-radius: 20px !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        cursor: pointer !important;
+        transition: background 0.2s !important;
+    }
+
+    .slide-btn:hover {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .slide-dots {
+        display: flex !important;
+        gap: 8px !important;
+    }
+
+    .slide-dot {
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50% !important;
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .slide-dot.active-dot {
+        background: #fff !important;
+    }
+
+
+@media screen and (min-width: 1401px) {
+    .slider-controls {
+        display: none !important;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .merch-title {
+        font-size: 40px;
+    }
+
+    .circular,
+    .rounded-square {
+        width: 150px;
+        height: 150px;
+    }
+
+    .product-name {
+        width: 150px;
+        font-size: 12px;
+    }
+
+    .product-carousel {
+        gap: 20px;
+    }
+}
+
+
+
+@media (max-width: 781px) {
+
+  /* 1. Reset your nav element to space items dynamically on row ends */
+    nav {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important; /* Pushes relative logo left, hamburger button right */
+        align-items: center !important;         /* Centers elements vertically */
+        width: 100% !important;
+        height: 60px !important;
+        padding: 10px 20px !important;
+        box-sizing: border-box !important;
+        background-color: none !important; /* Prevents text underneath from showing through */
+        backdrop-filter: blur(8px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 999999 !important;
+    }
+
+    /* 2. CRITICAL FIX: Strip absolute positioning from your logo */
+    .nav-logo {
+        position: relative !important; /* Strips desktop position: absolute; */
+        top: auto !important;          /* Resets absolute layout coordinate markers */
+        left: auto !important;         /* Resets absolute layout coordinate markers */
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        scale: 1 !important;           /* Normalizes default mobile sizing */
+    }
+
+    .nav-logo img {
+        height: 35px !important;       /* Keeps your daisy flower image compact and crisp */
+        width: auto !important;
+        display: block !important;
+    }
+
+    /* 3. Re-structure the Menu Toggle Button layout container */
+    .nav-toggle-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 24px !important;
+        height: 16px !important;
+        cursor: pointer !important;
+        z-index: 1000001 !important;
+        margin: 0 !important;          /* Ensures no desktop margin remnants shift it */
+        position: relative !important;
+    }
+
+    /* Style for the 3 individual white hamburger lines */
+    .nav-toggle-btn span {
+        display: block !important;
+        width: 100% !important;
+        height: 2px !important;
+        background-color: #c2c2c2 !important; /* Forces the lines to stay visible white */
+        border-radius: 2px !important;
+        transition: transform 0.3s ease, opacity 0.3s ease !important;
+    }
+
+    /* 4. Transform links list into a sliding side drawer menu panel */
+    .nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* Kept off-screen to the right by default */
+        width: 70% !important;
+        max-width: 280px !important;
+        height: 100vh !important;
+        background-color: #111111 !important;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.5) !important;
+        z-index: 1000000 !important;
+        transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        padding: 80px 24px 40px 24px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Active visibility class added by your toggle JavaScript code */
+    .nav-links.nav-menu-open {
+        right: 0 !important; /* Slides into full view from the right side */
+    }
+
+    /* Convert horizontal links list to a clean vertical stack layout */
+    .nav-links ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+    }
+
+    .nav-links a {
+        text-decoration: none !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    .nav-links li {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 16px !important;
+        color: #ffffff !important; /* Forces text links white inside dark panel drawer */
+        padding: 12px 15px !important;
+        border-radius: 8px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+    }
+
+    .nav-links li:hover {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+        scale: 1 !important; /* Disables wide desktop zooming hover animations */
+    }
+
+    /* 5. Mobile Menu 'X' Close Morph Transformations */
+    .nav-toggle-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+    }
+    .nav-toggle-btn.open span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    .nav-toggle-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
+    }
+}
+
+    #merch-page {
+        padding: 40px 20px;
+        gap: 60px;
+        overflow: visible;
+    }
+
+    .album-wrapper{
+        margin-left: 22vw;
+    }
+
+    #album-page p{
+        padding: 20px;
+    }
+
+    .merch-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-orders{
+        right: 2%;
+        scale: 0.8;
+    }
+
+    .merch-controls {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .circular,
+    .rounded-square {
+        width: 120px;
+        height: 120px;
+    }
+
+    .product-name {
+        width: 120px;
+        font-size: 11px;
+    }
+
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 36px;
+    }
+
+    .product-carousel {
+        gap: 15px;
+    }
+
+
+/* ============================================
+   RESPONSIVE MERCHANDISE OVERHAUL (BELOW 1100px)
+   ============================================ */
+@media screen and (max-width: 1100px) {
+
+    /* 1. Base Container Structural Resets */
+    #merch-page {
+        display: block !important;
+        width: 100% !important;
+        padding: 40px 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .merch-category {
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 auto !important;
+    }
+
+    /* 2. Header and Controls Centering Fix */
+    .merch-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        padding: 0 0 30px 0 !important; /* Strips out the rigid desktop 100px padding */
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .merch-title {
+        font-size: 2.2rem !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .merch-controls {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks search, sort, and cart cleanly */
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Search Input Wrapper Size Corrections */
+    .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        justify-content: space-between !important;
+    }
+
+    .sort-dropdown {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .sort-btn {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .dropdown-content {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        top: 45px !important;
+    }
+
+    /* 3. Grid Conversion (Fixes Overlapping Circles) */
+    .carousel-container {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    /* Hide horizontal nav arrows on mobile since we are switching to a vertical grid layout */
+    .carousel-nav {
+        display: none !important;
+    }
+
+    .carousel-wrapper {
+        display: block !important;
+        overflow: visible !important;
+        width: 100% !important;
+    }
+
+    /* Transform the horizontal flexible track into a clean two-column mobile grid */
+    .product-carousel {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Exactly 2 cards side-by-side */
+        gap: 30px 15px !important; /* Clean grid separation spaces */
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 10px 0 !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* 4. Product Card Scaling Overrides */
+    .product-item {
+        width: 100% !important; /* Takes up full column cell allocation */
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force the big circular imagery to scale down dynamically to match cell size */
+    .circular, 
+    .rounded-square,
+    .product-image {
+        width: 100% !important;
+        max-width: 150px !important; /* Restricts item images from eating up screen spaces */
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important; /* Preserves a perfect uniform circular scale ratio */
+    }
+
+    .product-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+    }
+
+    /* Re-center product name text parameters */
+    .product-name {
+        width: 100% !important;
+        font-size: 13px !important;
+        padding-top: 5px !important;
+        white-space: normal !important; /* Wraps clean subtitle lines gracefully */
+        min-height: 34px !important;    /* Keeps vertical baseline grid anchors aligned */
+        text-align: center !important;
+    }
+
+    /* 5. Product Action Row Reset (Fixes Broken 80px Gap) */
+    .product-action {
+        display: flex !important;
+        justify-content: center !important; /* Groups text and cart neatly together */
+        align-items: center !important;
+        gap: 12px !important;             /* Strips out toxic desktop 80px separation gaps */
+        width: 100% !important;
+        margin-top: auto !important;
+    }
+
+    .product-price {
+        font-size: 14px !important;
+        margin: 0 !important;
+    }
+
+    .product-action button {
+        width: 32px !important;
+        height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+    
+    .product-action button span {
+        font-size: 18px !important;
+    }
+}
