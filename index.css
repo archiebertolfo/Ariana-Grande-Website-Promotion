@@ -700,6 +700,9 @@ td {
     position: relative;
 }
 
+/* ============================================
+   DESKTOP HEADER & CONTROLS REFINEMENT
+   ============================================ */
 .merch-header {
     display: flex;
     justify-content: space-between;
@@ -710,7 +713,29 @@ td {
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 100px;
+    width: 100%;
+    box-sizing: border-box; /* Prevents padding from exploding the header size */
 }
+
+/* ============================================
+   DESKTOP HEADER & CONTROLS REFINEMENT
+   ============================================ */
+.merch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+    width: 100%;
+    box-sizing: border-box; /* Prevents padding from exploding the header size */
+}
+
+
+
 
 #crafts{
     padding-top: 20px;
@@ -934,6 +959,360 @@ td {
     background-color: #0c0c0b2d;
 }
 
+
+
+@media (max-width: 781px) {
+
+  /* 1. Reset your nav element to space items dynamically on row ends */
+    nav {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important; /* Pushes relative logo left, hamburger button right */
+        align-items: center !important;         /* Centers elements vertically */
+        width: 100% !important;
+        height: 60px !important;
+        padding: 10px 20px !important;
+        box-sizing: border-box !important;
+        background-color: none !important; /* Prevents text underneath from showing through */
+        backdrop-filter: blur(8px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 999999 !important;
+    }
+
+    /* 2. CRITICAL FIX: Strip absolute positioning from your logo */
+    .nav-logo {
+        position: relative !important; /* Strips desktop position: absolute; */
+        top: auto !important;          /* Resets absolute layout coordinate markers */
+        left: auto !important;         /* Resets absolute layout coordinate markers */
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        scale: 1 !important;           /* Normalizes default mobile sizing */
+    }
+
+    .nav-logo img {
+        height: 35px !important;       /* Keeps your daisy flower image compact and crisp */
+        width: auto !important;
+        display: block !important;
+    }
+
+    /* 3. Re-structure the Menu Toggle Button layout container */
+    .nav-toggle-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 24px !important;
+        height: 16px !important;
+        cursor: pointer !important;
+        z-index: 1000001 !important;
+        margin: 0 !important;          /* Ensures no desktop margin remnants shift it */
+        position: relative !important;
+    }
+
+    /* Style for the 3 individual white hamburger lines */
+    .nav-toggle-btn span {
+        display: block !important;
+        width: 100% !important;
+        height: 2px !important;
+        background-color: #c2c2c2 !important; /* Forces the lines to stay visible white */
+        border-radius: 2px !important;
+        transition: transform 0.3s ease, opacity 0.3s ease !important;
+    }
+
+    /* 4. Transform links list into a sliding side drawer menu panel */
+    .nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* Kept off-screen to the right by default */
+        width: 70% !important;
+        max-width: 280px !important;
+        height: 100vh !important;
+        background-color: #111111 !important;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.5) !important;
+        z-index: 1000000 !important;
+        transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        padding: 80px 24px 40px 24px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Active visibility class added by your toggle JavaScript code */
+    .nav-links.nav-menu-open {
+        right: 0 !important; /* Slides into full view from the right side */
+    }
+
+    /* Convert horizontal links list to a clean vertical stack layout */
+    .nav-links ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+    }
+
+    .nav-links a {
+        text-decoration: none !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    .nav-links li {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 16px !important;
+        color: #ffffff !important; /* Forces text links white inside dark panel drawer */
+        padding: 12px 15px !important;
+        border-radius: 8px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+    }
+
+    .nav-links li:hover {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+        scale: 1 !important; /* Disables wide desktop zooming hover animations */
+    }
+
+    /* 5. Mobile Menu 'X' Close Morph Transformations */
+    .nav-toggle-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+    }
+    .nav-toggle-btn.open span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    .nav-toggle-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
+    }
+
+
+    #merch-page {
+        padding: 40px 20px;
+        gap: 60px;
+        overflow: visible;
+    }
+
+    .album-wrapper{
+        margin-left: 22vw;
+    }
+
+    #album-page p{
+        padding: 20px;
+    }
+
+    .merch-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-orders{
+        right: 2%;
+        scale: 0.8;
+    }
+
+    .merch-controls {
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .circular,
+    .rounded-square {
+        width: 120px;
+        height: 120px;
+    }
+
+    .product-name {
+        width: 120px;
+        font-size: 11px;
+    }
+
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 36px;
+    }
+
+    .product-carousel {
+        gap: 15px;
+    }
+
+}
+/* ============================================
+   RESPONSIVE MERCHANDISE OVERHAUL (BELOW 1100px)
+   ============================================ */
+@media screen and (max-width: 1100px) {
+
+    /* 1. Base Container Structural Resets */
+    #merch-page {
+        display: block !important;
+        width: 100% !important;
+        padding: 40px 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .merch-category {
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 auto !important;
+    }
+
+    /* 2. Header and Controls Centering Fix */
+    .merch-header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        padding: 0 0 30px 0 !important; /* Strips out the rigid desktop 100px padding */
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .merch-title {
+        font-size: 2.2rem !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .merch-controls {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks search, sort, and cart cleanly */
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Search Input Wrapper Size Corrections */
+    .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        justify-content: space-between !important;
+    }
+
+    .sort-dropdown {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .sort-btn {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .dropdown-content {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        top: 45px !important;
+    }
+
+    /* 3. Grid Conversion (Fixes Overlapping Circles) */
+    .carousel-container {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    /* Hide horizontal nav arrows on mobile since we are switching to a vertical grid layout */
+    .carousel-nav {
+        display: none !important;
+    }
+
+    .carousel-wrapper {
+        display: block !important;
+        overflow: visible !important;
+        width: 100% !important;
+    }
+
+    /* Transform the horizontal flexible track into a clean two-column mobile grid */
+    .product-carousel {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Exactly 2 cards side-by-side */
+        gap: 30px 15px !important; /* Clean grid separation spaces */
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 10px 0 !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* 4. Product Card Scaling Overrides */
+    .product-item {
+        width: 100% !important; /* Takes up full column cell allocation */
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force the big circular imagery to scale down dynamically to match cell size */
+    .circular, 
+    .rounded-square,
+    .product-image {
+        width: 100% !important;
+        max-width: 150px !important; /* Restricts item images from eating up screen spaces */
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important; /* Preserves a perfect uniform circular scale ratio */
+    }
+
+    .product-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+    }
+
+    /* Re-center product name text parameters */
+    .product-name {
+        width: 100% !important;
+        font-size: 13px !important;
+        padding-top: 5px !important;
+        white-space: normal !important; /* Wraps clean subtitle lines gracefully */
+        min-height: 34px !important;    /* Keeps vertical baseline grid anchors aligned */
+        text-align: center !important;
+    }
+
+    /* 5. Product Action Row Reset (Fixes Broken 80px Gap) */
+    .product-action {
+        display: flex !important;
+        justify-content: center !important; /* Groups text and cart neatly together */
+        align-items: center !important;
+        gap: 12px !important;             /* Strips out toxic desktop 80px separation gaps */
+        width: 100% !important;
+        margin-top: auto !important;
+    }
+
+    .product-price {
+        font-size: 14px !important;
+        margin: 0 !important;
+    }
+
+    .product-action button {
+        width: 32px !important;
+        height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+    
+    .product-action button span {
+        font-size: 18px !important;
+    }
+}
+
+
+
 /* ============================================
    RESPONSIVE MEDIA QUERY (BELOW 1400px)
    ============================================ */
@@ -982,7 +1361,6 @@ td {
     }
     
     /* Keep all other .folders, table, and slider styles exactly the same below... */
-}
 
 
     /* 3. Re-purpose folders into sleek slideshow containers */
@@ -1176,6 +1554,7 @@ td {
     .slide-dot.active-dot {
         background: #fff !important;
     }
+}
 
 
 @media screen and (min-width: 1401px) {
@@ -1208,354 +1587,3 @@ td {
 }
 
 
-
-@media (max-width: 781px) {
-
-  /* 1. Reset your nav element to space items dynamically on row ends */
-    nav {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important; /* Pushes relative logo left, hamburger button right */
-        align-items: center !important;         /* Centers elements vertically */
-        width: 100% !important;
-        height: 60px !important;
-        padding: 10px 20px !important;
-        box-sizing: border-box !important;
-        background-color: none !important; /* Prevents text underneath from showing through */
-        backdrop-filter: blur(8px) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        z-index: 999999 !important;
-    }
-
-    /* 2. CRITICAL FIX: Strip absolute positioning from your logo */
-    .nav-logo {
-        position: relative !important; /* Strips desktop position: absolute; */
-        top: auto !important;          /* Resets absolute layout coordinate markers */
-        left: auto !important;         /* Resets absolute layout coordinate markers */
-        display: flex !important;
-        align-items: center !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        scale: 1 !important;           /* Normalizes default mobile sizing */
-    }
-
-    .nav-logo img {
-        height: 35px !important;       /* Keeps your daisy flower image compact and crisp */
-        width: auto !important;
-        display: block !important;
-    }
-
-    /* 3. Re-structure the Menu Toggle Button layout container */
-    .nav-toggle-btn {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
-        width: 24px !important;
-        height: 16px !important;
-        cursor: pointer !important;
-        z-index: 1000001 !important;
-        margin: 0 !important;          /* Ensures no desktop margin remnants shift it */
-        position: relative !important;
-    }
-
-    /* Style for the 3 individual white hamburger lines */
-    .nav-toggle-btn span {
-        display: block !important;
-        width: 100% !important;
-        height: 2px !important;
-        background-color: #c2c2c2 !important; /* Forces the lines to stay visible white */
-        border-radius: 2px !important;
-        transition: transform 0.3s ease, opacity 0.3s ease !important;
-    }
-
-    /* 4. Transform links list into a sliding side drawer menu panel */
-    .nav-links {
-        position: fixed !important;
-        top: 0 !important;
-        right: -100% !important; /* Kept off-screen to the right by default */
-        width: 70% !important;
-        max-width: 280px !important;
-        height: 100vh !important;
-        background-color: #111111 !important;
-        box-shadow: -5px 0 25px rgba(0,0,0,0.5) !important;
-        z-index: 1000000 !important;
-        transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-        padding: 80px 24px 40px 24px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Active visibility class added by your toggle JavaScript code */
-    .nav-links.nav-menu-open {
-        right: 0 !important; /* Slides into full view from the right side */
-    }
-
-    /* Convert horizontal links list to a clean vertical stack layout */
-    .nav-links ul {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        list-style: none !important;
-        width: 100% !important;
-    }
-
-    .nav-links a {
-        text-decoration: none !important;
-        width: 100% !important;
-        display: block !important;
-    }
-
-    .nav-links li {
-        font-family: 'Inter', sans-serif !important;
-        font-size: 16px !important;
-        color: #ffffff !important; /* Forces text links white inside dark panel drawer */
-        padding: 12px 15px !important;
-        border-radius: 8px !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        text-align: left !important;
-    }
-
-    .nav-links li:hover {
-        background-color: rgba(255, 255, 255, 0.08) !important;
-        scale: 1 !important; /* Disables wide desktop zooming hover animations */
-    }
-
-    /* 5. Mobile Menu 'X' Close Morph Transformations */
-    .nav-toggle-btn.open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg) !important;
-    }
-    .nav-toggle-btn.open span:nth-child(2) {
-        opacity: 0 !important;
-    }
-    .nav-toggle-btn.open span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg) !important;
-    }
-}
-
-    #merch-page {
-        padding: 40px 20px;
-        gap: 60px;
-        overflow: visible;
-    }
-
-    .album-wrapper{
-        margin-left: 22vw;
-    }
-
-    #album-page p{
-        padding: 20px;
-    }
-
-    .merch-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cart-orders{
-        right: 2%;
-        scale: 0.8;
-    }
-
-    .merch-controls {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    .circular,
-    .rounded-square {
-        width: 120px;
-        height: 120px;
-    }
-
-    .product-name {
-        width: 120px;
-        font-size: 11px;
-    }
-
-    .carousel-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 36px;
-    }
-
-    .product-carousel {
-        gap: 15px;
-    }
-
-
-/* ============================================
-   RESPONSIVE MERCHANDISE OVERHAUL (BELOW 1100px)
-   ============================================ */
-@media screen and (max-width: 1100px) {
-
-    /* 1. Base Container Structural Resets */
-    #merch-page {
-        display: block !important;
-        width: 100% !important;
-        padding: 40px 15px !important;
-        box-sizing: border-box !important;
-    }
-
-    .merch-category {
-        width: 100% !important;
-        position: relative !important;
-        margin: 0 auto !important;
-    }
-
-    /* 2. Header and Controls Centering Fix */
-    .merch-header {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 15px !important;
-        padding: 0 0 30px 0 !important; /* Strips out the rigid desktop 100px padding */
-        margin: 0 auto !important;
-        width: 100% !important;
-    }
-
-    .merch-title {
-        font-size: 2.2rem !important;
-        text-align: center !important;
-        margin: 0 !important;
-    }
-
-    .merch-controls {
-        display: flex !important;
-        flex-direction: column !important; /* Stacks search, sort, and cart cleanly */
-        align-items: center !important;
-        gap: 15px !important;
-        width: 100% !important;
-        max-width: 320px !important;
-        margin: 0 auto !important;
-    }
-
-    /* Search Input Wrapper Size Corrections */
-    .search-box {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: space-between !important;
-    }
-
-    .sort-dropdown {
-        width: 100% !important;
-        justify-content: center !important;
-    }
-
-    .sort-btn {
-        width: 100% !important;
-        text-align: center !important;
-    }
-
-    .dropdown-content {
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) !important;
-        top: 45px !important;
-    }
-
-    /* 3. Grid Conversion (Fixes Overlapping Circles) */
-    .carousel-container {
-        display: block !important;
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0 auto !important;
-    }
-
-    /* Hide horizontal nav arrows on mobile since we are switching to a vertical grid layout */
-    .carousel-nav {
-        display: none !important;
-    }
-
-    .carousel-wrapper {
-        display: block !important;
-        overflow: visible !important;
-        width: 100% !important;
-    }
-
-    /* Transform the horizontal flexible track into a clean two-column mobile grid */
-    .product-carousel {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* Exactly 2 cards side-by-side */
-        gap: 30px 15px !important; /* Clean grid separation spaces */
-        width: 100% !important;
-        min-width: 0 !important;
-        padding: 10px 0 !important;
-        flex-wrap: wrap !important;
-    }
-
-    /* 4. Product Card Scaling Overrides */
-    .product-item {
-        width: 100% !important; /* Takes up full column cell allocation */
-        max-width: 100% !important;
-        margin: 0 auto !important;
-        gap: 10px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Force the big circular imagery to scale down dynamically to match cell size */
-    .circular, 
-    .rounded-square,
-    .product-image {
-        width: 100% !important;
-        max-width: 150px !important; /* Restricts item images from eating up screen spaces */
-        height: auto !important;
-        aspect-ratio: 1 / 1 !important; /* Preserves a perfect uniform circular scale ratio */
-    }
-
-    .product-image img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        border-radius: 50% !important;
-    }
-
-    /* Re-center product name text parameters */
-    .product-name {
-        width: 100% !important;
-        font-size: 13px !important;
-        padding-top: 5px !important;
-        white-space: normal !important; /* Wraps clean subtitle lines gracefully */
-        min-height: 34px !important;    /* Keeps vertical baseline grid anchors aligned */
-        text-align: center !important;
-    }
-
-    /* 5. Product Action Row Reset (Fixes Broken 80px Gap) */
-    .product-action {
-        display: flex !important;
-        justify-content: center !important; /* Groups text and cart neatly together */
-        align-items: center !important;
-        gap: 12px !important;             /* Strips out toxic desktop 80px separation gaps */
-        width: 100% !important;
-        margin-top: auto !important;
-    }
-
-    .product-price {
-        font-size: 14px !important;
-        margin: 0 !important;
-    }
-
-    .product-action button {
-        width: 32px !important;
-        height: 32px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0 !important;
-    }
-    
-    .product-action button span {
-        font-size: 18px !important;
-    }
-}
