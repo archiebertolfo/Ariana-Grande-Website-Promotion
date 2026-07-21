@@ -960,6 +960,172 @@ td {
 }
 
 
+/* ============================================
+   RESPONSIVE MERCHANDISE OVERHAUL (BELOW 1100px)
+   ============================================ */
+@media screen and (max-width: 1100px) {
+
+    /* 1. Base Container Structural Resets */
+    #merch-page {
+        display: block !important;
+        width: 100% !important;
+        padding: 40px 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .merch-category {
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 auto !important;
+    }
+
+    /* 2. Header and Controls Centering Fix */
+    .merch-header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        padding: 0 0 30px 0 !important; /* Strips out the rigid desktop 100px padding */
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .merch-title {
+        font-size: 2.2rem !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .merch-controls {
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin-left: 100px ;
+    }
+
+    /* Search Input Wrapper Size Corrections */
+    .search-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        justify-content: space-between !important;
+    }
+
+    .sort-dropdown {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .sort-btn {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .dropdown-content {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        top: 45px !important;
+    }
+
+    /* 3. Grid Conversion (Fixes Overlapping Circles) */
+    .carousel-container {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    /* Hide horizontal nav arrows on mobile since we are switching to a vertical grid layout */
+    .carousel-nav {
+        display: none !important;
+    }
+
+    .carousel-wrapper {
+        display: block !important;
+        overflow: visible !important;
+        width: 100% !important;
+    }
+
+    /* Transform the horizontal flexible track into a clean two-column mobile grid */
+    .product-carousel {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Exactly 2 cards side-by-side */
+        gap: 30px 15px !important; /* Clean grid separation spaces */
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 10px 0 !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* 4. Product Card Scaling Overrides */
+    .product-item {
+        width: 100% !important; /* Takes up full column cell allocation */
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force the big circular imagery to scale down dynamically to match cell size */
+    .circular, 
+    .rounded-square,
+    .product-image {
+        width: 100% !important;
+        max-width: 150px !important; /* Restricts item images from eating up screen spaces */
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important; /* Preserves a perfect uniform circular scale ratio */
+    }
+
+    .product-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+    }
+
+    /* Re-center product name text parameters */
+    .product-name {
+        width: 100% !important;
+        font-size: 13px !important;
+        padding-top: 5px !important;
+        white-space: normal !important; /* Wraps clean subtitle lines gracefully */
+        min-height: 34px !important;    /* Keeps vertical baseline grid anchors aligned */
+        text-align: center !important;
+    }
+
+    /* 5. Product Action Row Reset (Fixes Broken 80px Gap) */
+    .product-action {
+        display: flex !important;
+        justify-content: center !important; /* Groups text and cart neatly together */
+        align-items: center !important;
+        gap: 12px !important;             /* Strips out toxic desktop 80px separation gaps */
+        width: 100% !important;
+        margin-top: auto !important;
+    }
+
+    .product-price {
+        font-size: 14px !important;
+        margin: 0 !important;
+    }
+
+    .product-action button {
+        width: 32px !important;
+        height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+    
+    .product-action button span {
+        font-size: 18px !important;
+    }
+}
+
 
 @media (max-width: 781px) {
 
@@ -1116,6 +1282,7 @@ td {
 
     .merch-controls {
         width: 100%;
+        margin: 20px;
     }
 
     .search-box {
@@ -1144,173 +1311,16 @@ td {
     }
 
 }
-/* ============================================
-   RESPONSIVE MERCHANDISE OVERHAUL (BELOW 1100px)
-   ============================================ */
-@media screen and (max-width: 1100px) {
 
-    /* 1. Base Container Structural Resets */
-    #merch-page {
-        display: block !important;
-        width: 100% !important;
-        padding: 40px 15px !important;
-        box-sizing: border-box !important;
+@media (max-width: 425px){
+    .album-wrapper{
+        left: 5vw;
     }
 
-    .merch-category {
-        width: 100% !important;
-        position: relative !important;
-        margin: 0 auto !important;
-    }
-
-    /* 2. Header and Controls Centering Fix */
-    .merch-header {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 15px !important;
-        padding: 0 0 30px 0 !important; /* Strips out the rigid desktop 100px padding */
-        margin: 0 auto !important;
-        width: 100% !important;
-    }
-
-    .merch-title {
-        font-size: 2.2rem !important;
-        text-align: center !important;
-        margin: 0 !important;
-    }
-
-    .merch-controls {
-        display: flex !important;
-        flex-direction: column !important; /* Stacks search, sort, and cart cleanly */
-        align-items: center !important;
-        gap: 15px !important;
-        width: 100% !important;
-        max-width: 320px !important;
-        margin: 0 auto !important;
-    }
-
-    /* Search Input Wrapper Size Corrections */
-    .search-box {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: space-between !important;
-    }
-
-    .sort-dropdown {
-        width: 100% !important;
-        justify-content: center !important;
-    }
-
-    .sort-btn {
-        width: 100% !important;
-        text-align: center !important;
-    }
-
-    .dropdown-content {
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) !important;
-        top: 45px !important;
-    }
-
-    /* 3. Grid Conversion (Fixes Overlapping Circles) */
-    .carousel-container {
-        display: block !important;
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0 auto !important;
-    }
-
-    /* Hide horizontal nav arrows on mobile since we are switching to a vertical grid layout */
-    .carousel-nav {
-        display: none !important;
-    }
-
-    .carousel-wrapper {
-        display: block !important;
-        overflow: visible !important;
-        width: 100% !important;
-    }
-
-    /* Transform the horizontal flexible track into a clean two-column mobile grid */
-    .product-carousel {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* Exactly 2 cards side-by-side */
-        gap: 30px 15px !important; /* Clean grid separation spaces */
-        width: 100% !important;
-        min-width: 0 !important;
-        padding: 10px 0 !important;
-        flex-wrap: wrap !important;
-    }
-
-    /* 4. Product Card Scaling Overrides */
-    .product-item {
-        width: 100% !important; /* Takes up full column cell allocation */
-        max-width: 100% !important;
-        margin: 0 auto !important;
-        gap: 10px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Force the big circular imagery to scale down dynamically to match cell size */
-    .circular, 
-    .rounded-square,
-    .product-image {
-        width: 100% !important;
-        max-width: 150px !important; /* Restricts item images from eating up screen spaces */
-        height: auto !important;
-        aspect-ratio: 1 / 1 !important; /* Preserves a perfect uniform circular scale ratio */
-    }
-
-    .product-image img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        border-radius: 50% !important;
-    }
-
-    /* Re-center product name text parameters */
-    .product-name {
-        width: 100% !important;
-        font-size: 13px !important;
-        padding-top: 5px !important;
-        white-space: normal !important; /* Wraps clean subtitle lines gracefully */
-        min-height: 34px !important;    /* Keeps vertical baseline grid anchors aligned */
-        text-align: center !important;
-    }
-
-    /* 5. Product Action Row Reset (Fixes Broken 80px Gap) */
-    .product-action {
-        display: flex !important;
-        justify-content: center !important; /* Groups text and cart neatly together */
-        align-items: center !important;
-        gap: 12px !important;             /* Strips out toxic desktop 80px separation gaps */
-        width: 100% !important;
-        margin-top: auto !important;
-    }
-
-    .product-price {
-        font-size: 14px !important;
-        margin: 0 !important;
-    }
-
-    .product-action button {
-        width: 32px !important;
-        height: 32px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0 !important;
-    }
-    
-    .product-action button span {
-        font-size: 18px !important;
+    .album-button{
+        font-size: 8px;
     }
 }
-
 
 
 /* ============================================
